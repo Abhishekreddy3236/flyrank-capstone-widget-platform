@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: flyrank_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: flyrank
+      POSTGRES_PASSWORD: flyrank_secret
+      POSTGRES_DB: flyrank_capstone
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flyrank -d flyrank_capstone"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
