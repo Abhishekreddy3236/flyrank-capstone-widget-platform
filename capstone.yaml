@@ -1,0 +1,32 @@
+name: "FlyRank Lead-Capture Platform"
+author: "Abhishek Reddy Kotha"
+track: "Backend"
+version: "1.0.0"
+
+features:
+  - "Multi-tenant architecture"
+  - "Embeddable JS widget"
+  - "Cross-Origin Resource Sharing (CORS)"
+  - "Rate limiting"
+  - "Honeypot spam protection"
+  - "Idempotency keys"
+  - "IP Geolocation with provider fallback"
+  - "Background job processing"
+  - "Tenant-isolated analytics dashboard"
+
+stack:
+  runtime: "Node.js"
+  framework: "Express"
+  database: "PostgreSQL (Docker)"
+  testing: "Jest + Supertest"
+
+probes_completed:
+  probe_1: true
+  probe_2: true
+  probe_3: true
+  probe_4: true
+  probe_5: true
+  probe_6: true
+
+automated_tests: 71
+test_coverage: "High"
