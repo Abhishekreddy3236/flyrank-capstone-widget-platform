@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Corp — Customer Demo Site</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F9FAFB;
+      color: #111827;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 { font-size: 20px; font-weight: 700; color: #4F46E5; }
+    header nav a { color: #6B7280; text-decoration: none; margin-left: 24px; font-size: 15px; }
+    header nav a:hover { color: #4F46E5; }
+    .hero {
+      max-width: 900px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .hero h2 { font-size: 48px; font-weight: 800; color: #111827; line-height: 1.1; }
+    .hero h2 span { color: #4F46E5; }
+    .hero p { font-size: 20px; color: #6B7280; margin-top: 20px; line-height: 1.6; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #6B7280; line-height: 1.5; }
+    .info-banner {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 16px 24px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-size: 14px;
+      color: #1D4ED8;
+    }
+    .info-banner code {
+      background: #DBEAFE;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #9CA3AF;
+      font-size: 13px;
+      border-top: 1px solid #E5E7EB;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 Acme Corp</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>Build <span>faster</span> with our platform</h2>
+      <p>
+        This is the <strong>second-origin customer demo site</strong> (port 5500).<br>
+        The FlyRank widget loads from <code>localhost:3000</code> and renders below.
+      </p>
+    </div>
+
+    <div class="info-banner">
+      <strong>📌 Second-Origin Rendering:</strong>
+      This page runs on <code>http://localhost:5500</code>.
+      The widget bundle is served from <code>http://localhost:3000/widget.v1.js</code>.
+      Submissions go cross-origin to <code>http://localhost:3000/api/public/widgets/[id]/submissions</code>.
+      This demonstrates full CORS functionality.
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>⚡ Fast</h3>
+        <p>Widget config is cached with short-lived Cache-Control headers for optimal performance.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔒 Secure</h3>
+        <p>Rate limiting, honeypot spam protection, and input validation protect every submission.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🌍 Global</h3>
+        <p>Visitor location is enriched via IP geolocation with automatic provider fallback.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Acme Corp Demo Site — FlyRank Capstone Project</p>
+    <p style="margin-top:4px">Widget served from <strong>http://localhost:3000</strong> | Demo site on <strong>http://localhost:5500</strong></p>
+  </footer>
+
+  <!--
+    WIDGET EMBED SNIPPET
+    Replace WIDGET_ID below with the actual widget UUID from your API.
+    Get it by running: GET /api/widgets (with your JWT) then GET /api/widgets/:id/snippet
+  -->
+  <script
+    src="http://localhost:3000/widget.v1.js"
+    data-widget-id="WIDGET_ID_PLACEHOLDER"
+    data-config-url="http://localhost:3000/api/public/widgets/WIDGET_ID_PLACEHOLDER/config"
+    async>
+  </script>
+
+</body>
+</html>
