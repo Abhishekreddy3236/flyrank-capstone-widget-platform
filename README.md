@@ -431,7 +431,3 @@ curl -X POST http://localhost:3000/api/public/widgets/:id/submissions \
 - No frontend dashboard UI (API-only, per capstone specification)
 
 ---
-
-## AI Usage Note
-
-This project was built with significant AI assistance (Google Gemini via Antigravity). See `BUILDLOG.md` for detailed accounting of where AI helped and what was corrected.
